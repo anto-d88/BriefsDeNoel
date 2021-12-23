@@ -1,0 +1,13 @@
+fonction 
+	jour/nuit
+
+fonction
+	thême/semain
+
+fonction
+	thême/saison
+
+fonction
+	modal/portefolio
+
+Création de contenue interessant 
