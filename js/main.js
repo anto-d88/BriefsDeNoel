@@ -32,6 +32,32 @@ function generatHeader(){
 }
 generatHeader();
 
+const imageCarousel = {
+    
+    image : '<img src="../img/image01.jpg" alt="street_fighter"><img src="../img/image02.png" alt="street_fighter"><img src="../img/image03.jpg" alt="street_fighter">',
+    boutLeft : '<p><</p>',
+    boutRight : '<p>></p>'
+}
+
+function generatCarousel(){
+
+    let boxCarousel = document.createElement("section")
+    let boxImage = document.createElement("figure");
+    boxImage.innerHTML = imageCarousel.image;
+    let boutonLeft = document.createElement("button");
+    boutonLeft.innerHTML = imageCarousel.boutLeft;
+    let boutonRight = document.createElement("button");
+    boutonRight.innerHTML = imageCarousel.boutRight;
+
+
+    document.body.children[1].appendChild(boxCarousel);
+    boxCarousel.appendChild(boxImage);
+    boxCarousel.appendChild(boutonLeft);
+    boxCarousel.appendChild(boutonRight);
+
+}
+generatCarousel();
+
 //
 //FOOTER
 const info = {

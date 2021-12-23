@@ -1,3 +1,14 @@
 main{
-    height: 60vh;
+    height: auto;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    section{
+        width: 60vh;
+    
+        figure{
+            
+            display: flex;
+        }
+    }
 }
