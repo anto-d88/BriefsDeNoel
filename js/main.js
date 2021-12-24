@@ -1,17 +1,17 @@
 const naveBar = {
 
-    bouton01 : "Carousel",
-    bouton02 : "Liste",
-    bouton03 : "Keeper",
-    bouton04 : "Monster",
+    bouton01: "Carousel",
+    bouton02: "Liste",
+    bouton03: "Keeper",
+    bouton04: "Monster",
 
 }
 
-//HEADER
-function generatHeader(){
+//HEADER************************************************************
+function generatHeader() {
 
     let boutonCarousel = document.createElement("button");
-    boutonCarousel.setAttribute("class","sectcar")
+    boutonCarousel.setAttribute("class", "sectcar")
     boutonCarousel.innerHTML = naveBar.bouton01
 
     let boutonList = document.createElement("button");
@@ -24,7 +24,7 @@ function generatHeader(){
     boutonMonster.innerHTML = naveBar.bouton04
 
 
-    
+
     document.body.firstElementChild.appendChild(boutonCarousel);
     document.body.firstElementChild.appendChild(boutonList);
     document.body.firstElementChild.appendChild(boutonKeeper);
@@ -34,43 +34,43 @@ function generatHeader(){
 generatHeader();
 
 
-//FOOTER
+//FOOTER***********************************************************
 const info = {
-    liste01 : "<li>info</li><li>info</li><li>info</li><li>info</li>",
-    liste02 : "<li>info</li><li>info</li><li>info</li><li>info</li>",
+    liste01: "<li>info</li><li>info</li><li>info</li><li>info</li>",
+    liste02: "<li>info</li><li>info</li><li>info</li><li>info</li>",
 }
-function generatFooter(){
+function generatFooter() {
 
     let infoFooterLeft = document.createElement("ul");
     infoFooterLeft.innerHTML = info.liste01;
 
     let infoFooterRight = document.createElement("ul");
     infoFooterRight.innerHTML = info.liste02;
-    
+
     document.body.children[2].appendChild(infoFooterLeft);
     document.body.children[2].appendChild(infoFooterRight);
-    
+
 }
 generatFooter();
 //SECTION CAROUSEL + LISTE + KEEP + MONSTRE
 
 // function generatSection(){
 
-    
+
 // }
 
-//CAROUSEL
+//CAROUSEL***************************************************************
 const imageCarousel = {
-    
-    image01 : '<img class="active" src="../img/image01.jpg" alt="street_fighter"><img src="../img/image02.png" alt="street_fighter"><img src="../img/image03.jpg" alt="street_fighter">',
-    boutLeft : '<p class="left"><</p>',
-    boutRight : '<p class="right">></p>'
+
+    image01: '<img class="active" src="../img/image01.jpg" alt="street_fighter"><img src="../img/image02.png" alt="street_fighter"><img src="../img/image03.jpg" alt="street_fighter">',
+    boutLeft: '<p class="left"><</p>',
+    boutRight: '<p class="right">></p>'
 }
 
-function generatCarousel(){
-    
+function generatCarousel() {
+
     let mainCarousel = document.createElement("section");
-    mainCarousel.setAttribute("class", "car");   
+    mainCarousel.setAttribute("class", "car");
     let fondCarousel = document.createElement("section");
     fondCarousel.setAttribute("class", "fond");
     let Box = document.createElement("figure");
@@ -84,18 +84,18 @@ function generatCarousel(){
     boxButright.innerHTML = imageCarousel.boutRight;
     let boxbut = document.createElement("section");
     boxbut.setAttribute("class", "boxButton")
-    
-     document.body.children[1].appendChild(mainCarousel);
+
+    document.body.children[1].appendChild(mainCarousel);
     mainCarousel.appendChild(fondCarousel);
     fondCarousel.appendChild(boxbut);
     boxbut.appendChild(boxButleft);
     boxbut.appendChild(boxButright);
     fondCarousel.appendChild(Box);
-    
+
 }
 generatCarousel();
 
-//CLICK DES  BOUTONS DU CAROUSEL
+//CLICK DES  BOUTONS DU CAROUSEL**********************************************
 
 const item = document.querySelectorAll("img");
 const nomSlide = item.length;
@@ -104,13 +104,13 @@ const precedent = document.querySelector(".left");
 
 let count = 0;
 
-function slideSuivante(){
+function slideSuivante() {
     item[count].classList.remove("active");
 
-    if(count < nomSlide - 1){
+    if (count < nomSlide - 1) {
         count++;
     }
-    else{
+    else {
         count = 0;
     }
     item[count].classList.add("active")
@@ -118,13 +118,13 @@ function slideSuivante(){
 
 suivant.addEventListener('click', slideSuivante);
 
-function slidePrecedente(){
+function slidePrecedente() {
     item[count].classList.remove("active");
 
-    if(count > 0){
+    if (count > 0) {
         count--;
     }
-    else{
+    else {
         count = nomSlide - 1;
     }
     item[count].classList.add("active")
@@ -132,14 +132,14 @@ function slidePrecedente(){
 
 precedent.addEventListener('click', slidePrecedente);
 
-// APPEL DES DIFFERENTE SECTIONS
+// APPEL DES DIFFERENTE SECTIONS*******************************************************
 
 const sectionCarousel = document.querySelector(".sectcar");
 // const sectionList = document.getElementById("list");
 // const sectionKeep = document.getElementById("keep");
 // const sectionMonst = document.getElementById("monst");
 
-sectionCarousel.onclick = function(){
+sectionCarousel.onclick = function () {
     let sectCar = document.querySelector(".car");
     sectCar.style.display = "flex";
 }

@@ -1,24 +1,20 @@
-.car{
+.car {
     display: none;
 }
-.fond{
-    width: 60vh;    
+.fond {
+    width: 60vh;
     border: 2px solid black;
     display: flex;
     align-items: center;
-    
- 
 }
 
-.carousel img{
+.carousel img {
     max-width: 100%;
     display: none;
-
 }
-.carousel img.active{
+.carousel img.active {
     display: block;
     // animation: carousel 0.8s;
-
 }
 // @keyframes carousel {
 //     from{
@@ -28,37 +24,31 @@
 //         opacity: 1;
 //     }
 // }
-.boxButton{
+.boxButton {
     display: flex;
     justify-content: space-between;
     width: 60vh;
     position: absolute;
-    
-
 }
-.butleft{
-    border: 2px solid black;
-    border-radius: 100%;
-    padding: 2%;
-    margin: 2%;
-
-    
-}
-.butright{
+.butleft {
     border: 2px solid black;
     border-radius: 100%;
     padding: 2%;
     margin: 2%;
 }
-.left{
-    text-align: center;
-    font-size: 200%;
-    cursor: pointer;
-      
+.butright {
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: 2%;
+    margin: 2%;
 }
-.right{
+.left {
     text-align: center;
     font-size: 200%;
     cursor: pointer;
-    
+}
+.right {
+    text-align: center;
+    font-size: 200%;
+    cursor: pointer;
 }
