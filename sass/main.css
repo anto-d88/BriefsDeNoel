@@ -184,7 +184,8 @@ main {
 
 /* Style the entete */
 .entete {
-  background-color: #f44336;
+  background-image: url(../../img/imageListe.jpg);
+  background-size: coverv;
   padding: 30px 40px;
   color: white;
   text-align: center;
