@@ -44,7 +44,8 @@ footer ul {
 
 main {
   width: 100%;
-  height: 60vh;
+  height: auto;
+  min-height: 60vh;
   background-image: url(../../img/mur.jpg);
   background-size: cover;
   display: flex;
@@ -108,7 +109,7 @@ main {
 .li {
   display: none;
   width: 60vh;
-  height: 60vh;
+  height: auto;
   border: 2px solid black;
   background-color: aliceblue;
 }
@@ -150,7 +151,7 @@ main {
 
 /* When clicked on, add a background color and strike out text */
 .uliste li.checked {
-  background: #888;
+  background: #11c55c;
   color: #fff;
   text-decoration: line-through;
 }
@@ -178,7 +179,7 @@ main {
 }
 
 .close:hover {
-  background-color: #f44336;
+  background-color: #17ad23;
   color: white;
 }
 
