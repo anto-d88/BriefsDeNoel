@@ -212,11 +212,67 @@ function newElemList() {
 
 //KEEPER**********************************************************
 
+function generatKeeper(){
+    
 let keeper = document.createElement("section");
 keeper.setAttribute("class", "ke");
+let titleKeeper = document.createElement("h2");
+titleKeeper.setAttribute("class", "titleKeeper");
+titleKeeper.innerHTML = "Score Keeper";
+//AJOUTER UN INPUT DE TYPE NUMBER ICI AVEC UN ID
+let scoreJ1 = document.createElement("h3");
+scoreJ1.setAttribute("id", "scoreJ1");
+scoreJ1.innerHTML = 0;
+let scoreJ2 = document.createElement("h3");
+scoreJ2.setAttribute("id", "scoreJ2");
+scoreJ2.innerHTML = 0;
+let boutJ1 = document.createElement("button");
+boutJ1.setAttribute("onclick", "clickJ1()");
+boutJ1.innerHTML = "JOUEUR 1";
+let boutJ2 = document.createElement("button");
+boutJ2.setAttribute("onclick", "clickJ2()");
+boutJ2.innerHTML = "JOUEUR 2";
+let resetKeeper = document.createElement("button");
+resetKeeper.setAttribute("onclick", "clickRst()");
+resetKeeper.innerHTML = "Reset";
+
+
+
+
 
 document.body.children[1].appendChild(keeper);
+keeper.appendChild(titleKeeper);
+keeper.appendChild(boutJ1);
+keeper.appendChild(scoreJ1);
+keeper.appendChild(scoreJ2);
+keeper.appendChild(boutJ2);
+keeper.appendChild(resetKeeper);
+}
+generatKeeper();
+// INCREMENTATION + RESET**************************************
 
+let scoreValue = 0;
+
+function clickJ1() {
+    scoreValue = 0;
+    keeperJ1(++scoreValue) 
+}
+function clickRst() {
+    scoreValue = 0;
+    keeperJ1(scoreValue);
+    keeperJ2(scoreValue);
+}
+function keeperJ1(valeurJ1) {
+    document.getElementById("scoreJ1").innerHTML = valeurJ1
+}
+function clickJ2() {
+    scoreValue = 0;
+    keeperJ2(++scoreValue) 
+}
+
+function keeperJ2(valeurJ2) {
+    document.getElementById("scoreJ2").innerHTML = valeurJ2
+}
 //MONSTER************************************************************
 
 let monster = document.createElement("section");
