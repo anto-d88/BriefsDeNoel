@@ -200,7 +200,7 @@ main {
 }
 
 /* Style the input */
-input {
+.entete input {
   margin: 0;
   border: none;
   border-radius: 0;
@@ -230,10 +230,73 @@ input {
 
 .ke {
   display: none;
-  width: 60vh;
-  height: 60vh;
+  width: 100vh;
+  height: auto;
   border: 2px solid black;
-  background-color: aliceblue;
+  background-image: url(../../img/keeper01.jpg);
+  background-size: cover;
+  text-align: center;
+}
+.ke h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.ke h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 2vh;
+  text-shadow: #969393 0.1em 0.1em;
+}
+
+.to {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.green {
+  color: #07b619;
+}
+
+#limit {
+  -moz-appearance: textfield;
+  width: 15%;
+  border: 2px solid;
+  text-align: center;
+  font-family: fantasy;
+  overflow: hidden;
+}
+#limit::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#limit::-o-inner-spin-button {
+  -o-appearance: none;
+  margin: 0;
+}
+
+.butKeeper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.butKeeper #btJ1 {
+  color: white;
+  background-color: #583410;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 100%;
+}
+.butKeeper #reset {
+  color: white;
+  background-color: #0a3a69;
+  width: 6vh;
+  border-radius: 50%;
+  height: 6vh;
+  font-size: 75%;
+  align-self: center;
+}
+.butKeeper #btJ2 {
+  color: white;
+  background-color: #053b29;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 100%;
 }
 
 .mo {
