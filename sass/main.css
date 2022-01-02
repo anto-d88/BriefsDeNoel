@@ -46,7 +46,7 @@ main {
   width: 100%;
   height: auto;
   min-height: 60vh;
-  background-image: url(../../img/mur.jpg);
+  background-image: url(../img/mur.jpg);
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -185,7 +185,7 @@ main {
 
 /* Style the entete */
 .entete {
-  background-image: url(../../img/imageListe.jpg);
+  background-image: url(../img/imageListe.jpg);
   background-size: cover;
   padding: 30px 40px;
   color: white;
