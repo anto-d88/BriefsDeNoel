@@ -1,0 +1,17 @@
+footer {
+    height: 30vh;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    ul {
+        color: white;
+        list-style: none;
+        line-height: 8vh;
+    }
+}
+.info{
+    text-decoration: underline;
+    font-weight: 900;
+    
+}

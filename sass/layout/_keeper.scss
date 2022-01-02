@@ -1,0 +1,69 @@
+.ke {
+    display: none;
+    width: 100vh;
+    height: auto;
+    border: 2px solid black;
+    background-image: url(../../img/keeper01.jpg);
+    background-size: cover;
+    text-align: center;
+    h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    h3 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin: 2vh;
+        text-shadow: rgb(150, 147, 147) 0.1em 0.1em;
+    }
+}
+.to {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.green {
+    color: #07b619;
+}
+#limit {
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::-o-inner-spin-button {
+        -o-appearance: none;
+        margin: 0;
+    }
+    width: 15%;
+    border: 2px solid;
+
+    text-align: center;
+    font-family: fantasy;
+    overflow: hidden;
+}
+.butKeeper {
+    display: flex;
+    justify-content: space-evenly;
+    #btJ1 {
+        color: white;
+        background-color: rgb(88, 52, 16);
+        width: 15vh;
+        height: 15vh;
+        border-radius: 100%;
+    }
+    #reset {
+        color: white;
+        background-color: rgb(10, 58, 105);
+        width: 6vh;
+        border-radius: 50%;
+        height: 6vh;
+        font-size: 75%;
+        align-self: center;
+    }
+    #btJ2 {
+        color: white;
+        background-color: rgb(5, 59, 41);
+        width: 15vh;
+        height: 15vh;
+        border-radius: 100%;
+    }
+}

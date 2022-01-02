@@ -1,0 +1,54 @@
+.car {
+    display: none;
+}
+.fond {
+    width: 60vh;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.carousel img {
+    max-width: 100%;
+    display: none;
+}
+.carousel img.active {
+    display: block;
+    // animation: carousel 0.8s;
+}
+// @keyframes carousel {
+//     from{
+//         opacity: 0;
+//     }
+//     to{
+//         opacity: 1;
+//     }
+// }
+.boxButton {
+    display: flex;
+    justify-content: space-between;
+    width: 60vh;
+    position: absolute;
+}
+.butleft {
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: 2%;
+    margin: 2%;
+}
+.butright {
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: 2%;
+    margin: 2%;
+}
+.left {
+    text-align: center;
+    font-size: 200%;
+    cursor: pointer;
+}
+.right {
+    text-align: center;
+    font-size: 200%;
+    cursor: pointer;
+}
