@@ -1,4 +1,5 @@
-
+//HEADER************************************************************
+{
 const naveBar = {
 
     bouton01: "Carousel",
@@ -8,7 +9,7 @@ const naveBar = {
 
 }
 
-//HEADER************************************************************
+
 function generatHeader() {
 
     let boutonCarousel = document.createElement("button");
@@ -37,8 +38,9 @@ function generatHeader() {
 }
 generatHeader();
 
-
+}
 //FOOTER***********************************************************
+{
 const info = {
     liste01: "<li class='info'>Infos contact:</li><li>Robles Soler</li><li>Antonio</li><li>Simplon haut de france</li>",
     liste02: "<li>07.82.76.03.31</li><li>59200</li><li>Tourcoing</li><li>antonio_robles_88@outlook.com</li>",
@@ -57,8 +59,9 @@ function generatFooter() {
 }
 generatFooter();
 
-
+}
 //CAROUSEL***************************************************************
+{
 const imageCarousel = {
 
     image01: '<img class="active" src="img/image01.jpg" alt="street_fighter"><img src="img/image02.png" alt="street_fighter"><img src="img/image03.jpg" alt="street_fighter">',
@@ -131,9 +134,10 @@ function slidePrecedente() {
 
 precedent.addEventListener('click', slidePrecedente);
 
+}
 //LISTE DE COURSE***************************************************
 
-
+{
 function generatLsteDeCours() {
     let listeDeCourse = document.createElement("section");
     listeDeCourse.setAttribute("class", "li");
@@ -209,9 +213,9 @@ function newElemList() {
     }, false);
 
 }
-
+}
 //KEEPER**********************************************************
-
+{
 function generatKeeper(){
     
 let keeper = document.createElement("section");
@@ -271,7 +275,7 @@ vinqueur.appendChild(afficheV);
 generatKeeper();
 
 
-// INCREMENTATION + RESET**************************************
+// FONCTION SCORE KEEPER**************************************
 
 
 let but1 = document.querySelector("#btJ1");
@@ -349,18 +353,181 @@ function printWin() {
         winner.classList.add("green");
     }
 }
-
+}
 
 //MONSTER************************************************************
 
+{
 let monster = document.createElement("section");
 monster.setAttribute("class", "mo");
+let sectTitle = document.createElement("section");
+sectTitle.setAttribute("class", "sectTitle");
+let you = document.createElement("h2");
+you.innerHTML = "You!";
+let monstre = document.createElement("h2");
+monstre.innerHTML = "Monster!"
+let barreVie = document.createElement("section");
+barreVie.setAttribute("class", "sctbar")
+let vieY = document.createElement("section");
+vieY.setAttribute("id", "vieY")
+let barY = document.createElement("article");
+barY.setAttribute("id", "barY");
+barY.innerHTML = "100%";
+let vieM = document.createElement("section");
+vieM.setAttribute("id", "vieM")
+let barM = document.createElement("article");
+barM.setAttribute("id", "barM");
+barM.innerHTML = "100%";
+let sectBut = document.createElement("section");
+sectBut.setAttribute("class", "sctBut");
+let Dem = document.createElement("button");
+Dem.setAttribute("id", "dem");
+Dem.innerHTML = "DEMARRER";
+let butJeu = document.createElement("section");
+butJeu.setAttribute("class", "butJeu");
+let attNorm = document.createElement("button");
+attNorm.setAttribute("id", "attNorm");
+attNorm.innerHTML = "ATTACK";
+let attSpec = document.createElement("button");
+attSpec.setAttribute("id", "attSpec");
+attSpec.innerHTML = "SPECIAL ATTACK";
+let soin = document.createElement("button");
+soin.setAttribute("id", "soin");
+soin.innerHTML = "HEAL";
+let aban = document.createElement("button");
+aban.setAttribute("id", "aban");
+aban.innerHTML = "GIVE UP";
 
 document.body.children[1].appendChild(monster);
+monster.appendChild(sectTitle);
+sectTitle.appendChild(you);
+sectTitle.appendChild(monstre);
+monster.appendChild(barreVie);
+barreVie.appendChild(vieY);
+barreVie.appendChild(vieM);
+vieY.appendChild(barY);
+vieM.appendChild(barM);
+monster.appendChild(sectBut);
+sectBut.appendChild(Dem);
+sectBut.appendChild(butJeu);
+butJeu.appendChild(attNorm);
+butJeu.appendChild(attSpec);
+butJeu.appendChild(soin);
+butJeu.appendChild(aban);
 
 
+//FONCTION MONSTER***********((((((??????EN COUR??????)))))*******************************************
+
+Dem.addEventListener("click", function(){
+    document.querySelector("#dem").style.display = "none";
+    document.querySelector(".butJeu").style.display = "flex";
+    soinsY();
+    soinsM();
+})
+
+aban.addEventListener("click", function(){
+    document.querySelector(".butJeu").style.display = "none";
+    document.querySelector("#dem").style.display = "flex";
+})
+
+attNorm.addEventListener("click", function () {
+    
+    attYou();
+})
+attSpec.addEventListener("click", function () {
+    
+    attYou();
+})
+soin.addEventListener("click", function () {
+    
+    soinsY();
+    soinsM();
+})
+
+function attRandom(min, max) {
+    return Math.max(Math.floor(Math.random() * max) + 1, min)
+}
+function soinsY() {
+    let j = 0;
+  if (j == 0) {
+    j = 1;
+    let elem = document.querySelector("#barY");
+    let width = "" ;
+    let id = setInterval(frame, 1);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        j = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+function soinsM() {
+    let j = 0;
+  if (j == 0) {
+    j = 1;
+    let elem = document.querySelector("#barM");
+    let width = "" ;
+    let id = setInterval(frame, 1);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        j = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+function attYou() {
+    let i = 0;
+  if (i == 0) {
+    i = 1;
+    let elem = document.querySelector("#barM");
+    let width = 100 ;
+    let id = setInterval(frame, 1);
+    function frame() {
+      if (width <= 0) {
+        clearInterval(id);
+        i = 0;
+        attMonster();
+      } else {
+        width--
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+function attMonster() {
+    let i = 0;
+  if (i == 0) {
+    i = 1;
+    let elem = document.querySelector("#barY");
+    let width = 100 ;
+    let id = setInterval(frame, 1);
+    function frame() {
+      if (width <= 0) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width--;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+}
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
+{
 const sectionCarousel = document.querySelector(".sectcar");
 const sectionList = document.querySelector(".list");
 const sectionKeep = document.querySelector(".keep");
@@ -393,4 +560,5 @@ sectionMonster.onclick = function () {
     document.querySelector(".li").style.display = "none";
     document.querySelector(".ke").style.display = "none";
     sectMonster.style.display = "block";
+}
 }

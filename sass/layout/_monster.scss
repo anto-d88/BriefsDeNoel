@@ -1,7 +1,67 @@
-.mo{
+.mo {
     display: none;
     width: 60vh;
     height: 60vh;
     border: 2px solid black;
     background-color: aliceblue;
+}
+.sectTitle {
+    display: flex;
+    justify-content: space-evenly;
+}
+.sctbar {
+    display: flex;
+    justify-content: space-between;
+}
+#vieM,
+#vieY {
+    margin: 2vh;
+    width: 50%;
+    background-color: #ddd;
+}
+
+#barM,
+#barY {
+    width: 100%;
+    height: 30px;
+    background-color: #04aa6d;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.sctBut {
+    background-color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#dem {
+    width: 25%;
+    background-color: #04aa6d;
+}
+.butJeu {
+    display: none;
+}
+#aban{
+    margin: 1vh;
+    background-color: #ffffff;
+    
+}
+#attNorm{
+    margin: 1vh;
+    background-color: #f60909;
+    
+}
+#attSpec{
+    margin: 1vh;
+    background-color: #f68b09;
+    
+}
+#soin{
+    margin: 1vh;
+    background-color: #5ded99;
+
 }
