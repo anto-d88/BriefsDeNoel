@@ -233,7 +233,7 @@ main {
   width: 100vh;
   height: auto;
   border: 2px solid black;
-  background-image: url(../../img/keeper01.jpg);
+  background-image: url(../img/keeper01.jpg);
   background-size: cover;
   text-align: center;
 }
