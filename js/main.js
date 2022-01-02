@@ -61,7 +61,7 @@ generatFooter();
 //CAROUSEL***************************************************************
 const imageCarousel = {
 
-    image01: '<img class="active" src="../img/image01.jpg" alt="street_fighter"><img src="../img/image02.png" alt="street_fighter"><img src="../img/image03.jpg" alt="street_fighter">',
+    image01: '<img class="active" src="img/image01.jpg" alt="street_fighter"><img src="img/image02.png" alt="street_fighter"><img src="img/image03.jpg" alt="street_fighter">',
     boutLeft: '<p class="left"><</p>',
     boutRight: '<p class="right">></p>'
 }
