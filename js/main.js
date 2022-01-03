@@ -339,6 +339,9 @@ inputChange.addEventListener("change", function () {
     
     pl1.innerHTML = 0;
     pl2.innerHTML = 0;
+    pl1.classList.remove("green");
+    pl2.classList.remove("green");
+
     
 });
 
@@ -421,8 +424,8 @@ butJeu.appendChild(aban);
 Dem.addEventListener("click", function(){
     document.querySelector("#dem").style.display = "none";
     document.querySelector(".butJeu").style.display = "flex";
-    soinsY();
-    soinsM();
+    demarrage();
+    
 })
 
 aban.addEventListener("click", function(){
@@ -431,99 +434,119 @@ aban.addEventListener("click", function(){
 })
 
 attNorm.addEventListener("click", function () {
+    if(attYou(5, 10) <= 0 || attMonster() <= 0){
+        return console.log("p1")
+    }
     
-    attYou();
 })
 attSpec.addEventListener("click", function () {
     
-    attYou();
+    if(attYou(10, 20) <= 0 || attMonster() <= 0){
+
+        return console.log("p2");
+    }
+    
 })
 soin.addEventListener("click", function () {
     
     soinsY();
-    soinsM();
+    attMonster();
 })
 
 function attRandom(min, max) {
     return Math.max(Math.floor(Math.random() * max) + 1, min)
 }
+
+function demarrage() {
+    let j = 0;
+  if (j == 0) {
+    j = 1;
+    let elem = document.querySelector("#barY");
+    let elemM = document.querySelector("#barM");
+    let width = "" ;
+    let id = setInterval(frame, 1);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        j = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+        elemM.style.width = width + "%";
+        elemM.innerHTML = width  + "%";
+      }
+    }
+  }
+}
 function soinsY() {
-    let j = 0;
-  if (j == 0) {
-    j = 1;
     let elem = document.querySelector("#barY");
-    let width = "" ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        j = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
-    }
-  }
+    let width = elem.style.width;
+    console.log(width);
+    width = Number(width.substring(0, width.length - 1));
+    
+    console.log(width);
+          width +=  10;
+          console.log(width);
+          if(width > 100) {
+              width = 100
+          }
+            elem.style.width = width + "%";
+            
+            elem.innerHTML = width  + "%";
+
 }
-function soinsM() {
-    let j = 0;
-  if (j == 0) {
-    j = 1;
+function attYou(min, max) {
+    console.log("player attack")
     let elem = document.querySelector("#barM");
-    let width = "" ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        j = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
+    let width = elem.style.width;
+    width = width.substring(0, width.length - 1) ;
+          width -=  attRandom(min, max);
+          if(width < 0) {
+              width = 0
+          }
+            elem.style.width = width + "%";
+            
+            elem.innerHTML = width  + "%";
+
+            return width;
+      
     }
-  }
-}
-function attYou() {
-    let i = 0;
-  if (i == 0) {
-    i = 1;
-    let elem = document.querySelector("#barM");
-    let width = 100 ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width <= 0) {
-        clearInterval(id);
-        i = 0;
-        attMonster();
-      } else {
-        width--
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
-    }
-  }
-}
 function attMonster() {
-    let i = 0;
-  if (i == 0) {
-    i = 1;
-    let elem = document.querySelector("#barY");
-    let width = 100 ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width <= 0) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width--;
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
-    }
-  }
-}
+        console.log("monster attack")
+        let elem = document.querySelector("#barY");
+        let width = elem.style.width;
+
+        width = width.substring(0, width.length - 1) ;
+              width -=  attRandom(5, 10);
+              if(width < 0) {
+                width = 0
+            }
+            elem.style.width = width + "%";
+            elem.innerHTML = width  + "%";
+
+              return width;          
+        }
+
+// function attMonster() {
+//     let i = 0;
+//   if (i == 0) {
+//     i = 1;
+//     let elem = document.querySelector("#barY");
+//     let width = 100 ;
+//     let id = setInterval(frame, 1);
+//     function frame() {
+//       if (width <= 99) {
+//         clearInterval(id);
+//         i = 0;
+//       } else {
+//         width -= attRandom(3, 10);
+//         elem.style.width = width + "%";
+//         elem.innerHTML = width  + "%";
+//       }
+//     }
+//   }
+// }
 }
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
