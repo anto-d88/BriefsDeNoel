@@ -1,5 +1,5 @@
 //HEADER************************************************************
-{
+
 const naveBar = {
 
     bouton01: "Carousel",
@@ -38,9 +38,8 @@ function generatHeader() {
 }
 generatHeader();
 
-}
-//FOOTER***********************************************************
-{
+
+//FOOTER***********************************************************{
 const info = {
     liste01: "<li class='info'>Infos contact:</li><li>Robles Soler</li><li>Antonio</li><li>Simplon haut de france</li>",
     liste02: "<li>07.82.76.03.31</li><li>59200</li><li>Tourcoing</li><li>antonio_robles_88@outlook.com</li>",
@@ -59,14 +58,14 @@ function generatFooter() {
 }
 generatFooter();
 
-}
+
 //             CCC  AA  RRRR   OOO  U   U  SSS  EEEE L   
 //            C    A  A R   R O   O U   U S     E    L   
 //            C    AAAA RRRR  O   O U   U  SSS  EEE  L   
 //            C    A  A R R   O   O U   U     S E    L   
 //             CCC A  A R  RR  OOO   UUU  SSSS  EEEE LLLL
 //CAROUSEL***************************************************************
-{
+
 const imageCarousel = {
 
     image01: '<img class="active" src="img/image01.jpg" alt="street_fighter"><img src="img/image02.png" alt="street_fighter"><img src="img/image03.jpg" alt="street_fighter">',
@@ -139,7 +138,7 @@ function slidePrecedente() {
 
 precedent.addEventListener('click', slidePrecedente);
 
-}
+
 //               TTTTTT  OOO   OOO  DDD   OOO 
 //                 TT   O   O O   O D  D O   O
 //                 TT   O   O O   O D  D O   O
@@ -147,7 +146,7 @@ precedent.addEventListener('click', slidePrecedente);
 //                 TT    OOO   OOO  DDD   OOO 
 //LISTE DE COURSE***************************************************
 
-{
+
 function generatLsteDeCours() {
     let listeDeCourse = document.createElement("section");
     listeDeCourse.setAttribute("class", "li");
@@ -223,14 +222,14 @@ function newElemList() {
     }, false);
 
 }
-}
+
 //              K  K EEEE EEEE PPPP  EEEE RRRR 
 //              K K  E    E    P   P E    R   R
 //              KK   EEE  EEE  PPPP  EEE  RRRR 
 //              K K  E    E    P     E    R R  
 //              K  K EEEE EEEE P     EEEE R  RR
 //KEEPER**********************************************************
-{
+
 function generatKeeper(){
     
 let keeper = document.createElement("section");
@@ -371,14 +370,14 @@ function printWin() {
         winner.classList.add("green");
     }
 }
-}                 
+                
 //MONSTER*****************************************************************************************
 //                  M   M  OOO  N   N  SSS  TTTTTT EEEE RRRR 
 //                  MM MM O   O NN  N S       TT   E    R   R
 //                  M M M O   O N N N  SSS    TT   EEE  RRRR 
 //                  M   M O   O N  NN     S   TT   E    R R  
 //                  M   M  OOO  N   N SSSS    TT   EEEE R  RR
-{
+
 let monster = document.createElement("section");
 monster.setAttribute("class", "mo");
 let sectTitle = document.createElement("section");
@@ -574,10 +573,10 @@ function attMonster(min, max) {
         }
 
 
-}
+
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
-{
+
 const sectionCarousel = document.querySelector(".sectcar");
 const sectionList = document.querySelector(".list");
 const sectionKeep = document.querySelector(".keep");
@@ -611,4 +610,4 @@ sectionMonster.onclick = function () {
     document.querySelector(".ke").style.display = "none";
     sectMonster.style.display = "block";
 }
-}
+
