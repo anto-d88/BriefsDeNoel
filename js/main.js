@@ -433,6 +433,7 @@ aban.addEventListener("click", function(){
 attNorm.addEventListener("click", function () {
     
     attYou();
+    attMonster();
 })
 attSpec.addEventListener("click", function () {
     
@@ -447,6 +448,7 @@ soin.addEventListener("click", function () {
 function attRandom(min, max) {
     return Math.max(Math.floor(Math.random() * max) + 1, min)
 }
+
 function soinsY() {
     let j = 0;
   if (j == 0) {
@@ -486,44 +488,49 @@ function soinsM() {
   }
 }
 function attYou() {
-    let i = 0;
-  if (i == 0) {
-    i = 1;
     let elem = document.querySelector("#barM");
-    let width = 100 ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width <= 0) {
-        clearInterval(id);
-        i = 0;
-        attMonster();
-      } else {
-        width--
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
+    let width = elem.style.width;
+    width = width.substring(0, width.length - 1) ;
+          width -=  attRandom(3, 10);
+            elem.style.width = width + "%";
+            
+            elem.innerHTML = width  + "%";
+      
     }
-  }
-}
-function attMonster() {
-    let i = 0;
-  if (i == 0) {
-    i = 1;
-    let elem = document.querySelector("#barY");
-    let width = 100 ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width <= 0) {
-        clearInterval(id);
-        i = 0;
-      } else {
-        width--;
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-      }
-    }
-  }
-}
+    function attMonster() {
+        let elem = document.querySelector("#barY");
+        let width = elem.style.width;
+
+        width = width.substring(0, width.length - 1) ;
+
+    
+              width -=  attRandom(5, 10);
+    
+                elem.style.width = width + "%";
+                
+              elem.innerHTML = width  + "%";
+          
+        }
+
+// function attMonster() {
+//     let i = 0;
+//   if (i == 0) {
+//     i = 1;
+//     let elem = document.querySelector("#barY");
+//     let width = 100 ;
+//     let id = setInterval(frame, 1);
+//     function frame() {
+//       if (width <= 99) {
+//         clearInterval(id);
+//         i = 0;
+//       } else {
+//         width -= attRandom(3, 10);
+//         elem.style.width = width + "%";
+//         elem.innerHTML = width  + "%";
+//       }
+//     }
+//   }
+// }
 }
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
