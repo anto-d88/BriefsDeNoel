@@ -434,21 +434,16 @@ aban.addEventListener("click", function(){
 })
 
 attNorm.addEventListener("click", function () {
-    if(attYou(5, 10) <= 0 || attMonster() <= 0)
-      return console.log("p1")
-    
-    else if(attMonster() <= 0 || attYou(5, 10) <= 0){
-        return console.log("p2")
+    if(attYou(5, 10) <= 0 || attMonster() <= 0){
+        return console.log("p1")
     }
     
 })
 attSpec.addEventListener("click", function () {
     
     if(attYou(10, 20) <= 0 || attMonster() <= 0){
-        return console.log("p1");
-    }
-    else if(attMonster() <= 0 || attYou(10, 20) <= 0){
-        return console.log("p2")
+
+        return console.log("p2");
     }
     
 })
