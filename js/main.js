@@ -230,61 +230,61 @@ function newElemList() {
 //              K  K EEEE EEEE P     EEEE R  RR
 //KEEPER**********************************************************
 
-function generatKeeper(){
-    
-let keeper = document.createElement("section");
-keeper.setAttribute("class", "ke");
-let titleKeeper = document.createElement("h1");
-titleKeeper.innerHTML = "Score Keeper";
-let scoreJ1toJ2 = document.createElement("h3");
-scoreJ1toJ2.innerHTML = "Score:";
-let pTo = document.createElement("span");
-pTo.setAttribute("class", "to");
-pTo.innerHTML = " to ";
-let scoreJ1 = document.createElement("span");
-scoreJ1.setAttribute("id", "scoreJ1");
-scoreJ1.innerHTML = 0;
-let scoreJ2 = document.createElement("span");
-scoreJ2.setAttribute("id", "scoreJ2");
-scoreJ2.innerHTML = 0;
-let boxbutkeeper = document.createElement("section");
-boxbutkeeper.setAttribute("class", "butKeeper");
-let boutJ1 = document.createElement("button");
-boutJ1.setAttribute("id", "btJ1");
-boutJ1.innerHTML = "JOUEUR 1";
-let boutJ2 = document.createElement("button");
-boutJ2.setAttribute("id", "btJ2");
-boutJ2.innerHTML = "JOUEUR 2";
-let resetKeeper = document.createElement("button");
-resetKeeper.setAttribute("id", "reset");
-resetKeeper.innerHTML = "Reset";
-let scoreChoi = document.createElement("input");
-scoreChoi.setAttribute("type", "number");
-scoreChoi.setAttribute("id", "limit");
-scoreChoi.setAttribute("value", 0);
-let vinqueur = document.createElement("h3");
-vinqueur.innerHTML = "The winner is:";
-let afficheV = document.createElement("span");
-afficheV.setAttribute("id", "winner");
-afficheV.innerHTML = 0;
+function generatKeeper() {
+
+    let keeper = document.createElement("section");
+    keeper.setAttribute("class", "ke");
+    let titleKeeper = document.createElement("h1");
+    titleKeeper.innerHTML = "Score Keeper";
+    let scoreJ1toJ2 = document.createElement("h3");
+    scoreJ1toJ2.innerHTML = "Score:";
+    let pTo = document.createElement("span");
+    pTo.setAttribute("class", "to");
+    pTo.innerHTML = " to ";
+    let scoreJ1 = document.createElement("span");
+    scoreJ1.setAttribute("id", "scoreJ1");
+    scoreJ1.innerHTML = 0;
+    let scoreJ2 = document.createElement("span");
+    scoreJ2.setAttribute("id", "scoreJ2");
+    scoreJ2.innerHTML = 0;
+    let boxbutkeeper = document.createElement("section");
+    boxbutkeeper.setAttribute("class", "butKeeper");
+    let boutJ1 = document.createElement("button");
+    boutJ1.setAttribute("id", "btJ1");
+    boutJ1.innerHTML = "JOUEUR 1";
+    let boutJ2 = document.createElement("button");
+    boutJ2.setAttribute("id", "btJ2");
+    boutJ2.innerHTML = "JOUEUR 2";
+    let resetKeeper = document.createElement("button");
+    resetKeeper.setAttribute("id", "reset");
+    resetKeeper.innerHTML = "Reset";
+    let scoreChoi = document.createElement("input");
+    scoreChoi.setAttribute("type", "number");
+    scoreChoi.setAttribute("id", "limit");
+    scoreChoi.setAttribute("value", 0);
+    let vinqueur = document.createElement("h3");
+    vinqueur.innerHTML = "The winner is:";
+    let afficheV = document.createElement("span");
+    afficheV.setAttribute("id", "winner");
+    afficheV.innerHTML = 0;
 
 
 
 
 
-document.body.children[1].appendChild(keeper);
-keeper.appendChild(titleKeeper);
-keeper.appendChild(scoreChoi);
-keeper.appendChild(scoreJ1toJ2);
-scoreJ1toJ2.appendChild(scoreJ1);
-scoreJ1toJ2.appendChild(pTo);
-scoreJ1toJ2.appendChild(scoreJ2);
-keeper.appendChild(boxbutkeeper);
-boxbutkeeper.appendChild(boutJ1);
-boxbutkeeper.appendChild(resetKeeper);
-boxbutkeeper.appendChild(boutJ2);
-keeper.appendChild(vinqueur);
-vinqueur.appendChild(afficheV);
+    document.body.children[1].appendChild(keeper);
+    keeper.appendChild(titleKeeper);
+    keeper.appendChild(scoreChoi);
+    keeper.appendChild(scoreJ1toJ2);
+    scoreJ1toJ2.appendChild(scoreJ1);
+    scoreJ1toJ2.appendChild(pTo);
+    scoreJ1toJ2.appendChild(scoreJ2);
+    keeper.appendChild(boxbutkeeper);
+    boxbutkeeper.appendChild(boutJ1);
+    boxbutkeeper.appendChild(resetKeeper);
+    boxbutkeeper.appendChild(boutJ2);
+    keeper.appendChild(vinqueur);
+    vinqueur.appendChild(afficheV);
 }
 generatKeeper();
 
@@ -306,11 +306,11 @@ let inputChange = document.querySelector("#limit");
 
 let winner = document.querySelector("#winner");
 
-but1.addEventListener("click", function() {
+but1.addEventListener("click", function () {
     let limit = document.querySelector("#limit").value;
     scoreValueJ1++;
     pl1.innerHTML = scoreValueJ1;
-    if( scoreValueJ1 == limit || ( scoreValueJ1>scoreValueJ2 && scoreValueJ1>limit)){
+    if (scoreValueJ1 == limit || (scoreValueJ1 > scoreValueJ2 && scoreValueJ1 > limit)) {
         pl1.classList.add("green");
         but1.setAttribute("disabled", "true");
         but2.setAttribute("disabled", "true");
@@ -318,11 +318,11 @@ but1.addEventListener("click", function() {
     }
 });
 
-but2.addEventListener("click", function(){
+but2.addEventListener("click", function () {
     let limit = document.querySelector("#limit").value;
     scoreValueJ2++;
     pl2.innerHTML = scoreValueJ2;
-    if( scoreValueJ2 == limit || ( scoreValueJ2 > scoreValueJ1 && scoreValueJ2 > limit)){
+    if (scoreValueJ2 == limit || (scoreValueJ2 > scoreValueJ1 && scoreValueJ2 > limit)) {
         pl2.classList.add("green");
         but1.setAttribute("disabled", "true");
         but2.setAttribute("disabled", "true");
@@ -331,7 +331,7 @@ but2.addEventListener("click", function(){
     }
 });
 
-reset.addEventListener("click", function() {
+reset.addEventListener("click", function () {
     but1.removeAttribute("disabled");
     but2.removeAttribute("disabled");
 
@@ -345,32 +345,32 @@ reset.addEventListener("click", function() {
     pl2.innerHTML = scoreValueJ2;
 
     document.querySelector("#limit").value = 0;
-    
+
     winner.innerHTML = "";
 });
 
 inputChange.addEventListener("change", function () {
-    
+
     pl1.innerHTML = 0;
     pl2.innerHTML = 0;
     pl1.classList.remove("green");
     pl2.classList.remove("green");
 
-    
+
 });
 
 function printWin() {
-    
-    if( scoreValueJ1 > scoreValueJ2){
+
+    if (scoreValueJ1 > scoreValueJ2) {
         winner.innerHTML = "Player 1";
         winner.classList.add("green");
     }
-    else{
+    else {
         winner.innerHTML = "Player 2";
         winner.classList.add("green");
     }
 }
-                
+
 //MONSTER*****************************************************************************************
 //                  M   M  OOO  N   N  SSS  TTTTTT EEEE RRRR 
 //                  MM MM O   O NN  N S       TT   E    R   R
@@ -417,6 +417,13 @@ soin.innerHTML = "HEAL";
 let aban = document.createElement("button");
 aban.setAttribute("id", "aban");
 aban.innerHTML = "GIVE UP";
+let boxLog = document.createElement("section");
+let titleLog = document.createElement("h3");
+titleLog.innerHTML = "ACTION"
+let boxLi = document.createElement("section");
+let listLog = document.createElement("ul");
+listLog.setAttribute("id", "listLog");
+listLog.setAttribute("class", "log");
 
 document.body.children[1].appendChild(monster);
 monster.appendChild(sectTitle);
@@ -434,62 +441,73 @@ butJeu.appendChild(attNorm);
 butJeu.appendChild(attSpec);
 butJeu.appendChild(soin);
 butJeu.appendChild(aban);
+monster.appendChild(boxLog);
+boxLog.appendChild(titleLog);
+boxLog.appendChild(boxLi);
+boxLi.appendChild(listLog);
 
 
 //FONCTION MONSTER***********((((((??????EN COUR??????)))))*******************************************
 
-Dem.addEventListener("click", function(){
+Dem.addEventListener("click", function () {
     document.querySelector("#dem").style.display = "none";
     document.querySelector(".butJeu").style.display = "flex";
     demarrage();
-    
-    document.querySelector("#attSpec").disabled = false;  
-    document.querySelector("#attNorm").disabled = false;  
-    document.querySelector("#soin").disabled = false;  
+    newElemLogD();
+
+    document.querySelector("#attSpec").disabled = false;
+    document.querySelector("#attNorm").disabled = false;
+    document.querySelector("#soin").disabled = false;
 })
 
-aban.addEventListener("click", function(){
+aban.addEventListener("click", function () {
     document.querySelector(".butJeu").style.display = "none";
     document.querySelector("#dem").style.display = "flex";
+    newElemLogA();
 })
 
 attNorm.addEventListener("click", function () {
-   if(attMonster(-1, -1) <= 0 || attYou(5, 10) <= 0  ){
-       
-       document.querySelector("#attSpec").disabled = true;  
-       document.querySelector("#attNorm").disabled = true;  
-       document.querySelector("#soin").disabled = true;  
-   };
-   if(attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0  ){
-       
-       document.querySelector("#attSpec").disabled = true;  
-       document.querySelector("#attNorm").disabled = true;  
-       document.querySelector("#soin").disabled = true;  
+    if (attMonster(-1, -1) <= 0 || attYou(5, 10) <= 0) {
+
+        document.querySelector("#attSpec").disabled = true;
+        document.querySelector("#attNorm").disabled = true;
+        document.querySelector("#soin").disabled = true;
     };
-    
+    if (attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0) {
+
+        document.querySelector("#attSpec").disabled = true;
+        document.querySelector("#attNorm").disabled = true;
+        document.querySelector("#soin").disabled = true;
+    };
+    newElemLogN();
+
 })
 
 attSpec.addEventListener("click", function () {
-    
-    
-    if(attMonster(-1, -1) <= 0 || attYou(10, 20) <= 0){
-        
-        
-        document.querySelector("#attSpec").disabled = true;  
-        document.querySelector("#attNorm").disabled = true;  
-        document.querySelector("#soin").disabled = true;  
+
+
+    if (attMonster(-1, -1) <= 0 || attYou(10, 20) <= 0) {
+
+
+        document.querySelector("#attSpec").disabled = true;
+        document.querySelector("#attNorm").disabled = true;
+        document.querySelector("#soin").disabled = true;
     }
-    if(attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0){
-        
-        document.querySelector("#attSpec").disabled = true;  
-        document.querySelector("#attNorm").disabled = true;  
-        document.querySelector("#soin").disabled = true;  
-        
+    if (attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0) {
+
+        document.querySelector("#attSpec").disabled = true;
+        document.querySelector("#attNorm").disabled = true;
+        document.querySelector("#soin").disabled = true;
+
     }
+    newElemLogS();
+    return value
 })
 soin.addEventListener("click", function () {
     soinsY(5, 10);
+    newElemLogSoin();
     attMonster(5, 10);
+    newElemLogM();
 })
 
 function attRandom(min, max) {
@@ -498,81 +516,180 @@ function attRandom(min, max) {
 
 function demarrage() {
     let j = 0;
-  if (j == 0) {
-    j = 1;
-    let elem = document.querySelector("#barY");
-    let elemM = document.querySelector("#barM");
-    let width = "" ;
-    let id = setInterval(frame, 1);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-        j = 0;
-      } else {
-        width++;
-        elem.style.width = width + "%";
-        elem.innerHTML = width  + "%";
-        elemM.style.width = width + "%";
-        elemM.innerHTML = width  + "%";
-      }
+    if (j == 0) {
+        j = 1;
+        let elem = document.querySelector("#barY");
+        let elemM = document.querySelector("#barM");
+        let width = "";
+        let id = setInterval(frame, 1);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                j = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+                elem.innerHTML = width + "%";
+                elemM.style.width = width + "%";
+                elemM.innerHTML = width + "%";
+            }
+        }
     }
-  }
 }
 function soinsY(min, max) {
     let elem = document.querySelector("#barY");
     let width = elem.style.width;
     width = width.substring(0, width.length - 1);
-    
-          width -=  -attRandom(min, max);
-          console.log("width");
-          if(width > 100) {
-              width = 100
-          }
-          if(width <= 0) {
-            width = 0
-        }
 
-            elem.style.width = width + "%";
-            
-            elem.innerHTML = width  + "%";
+    width -= -attRandom(min, max);
+    console.log("width");
+    if (width > 100) {
+        width = 100
+    }
+    if (width <= 0) {
+        width = 0
+    }
 
-            return width
-            
-        }
-        function attYou(min, max) {
+    elem.style.width = width + "%";
+
+    elem.innerHTML = width + "%";
+
+    return width
+
+}
+function attYou(min, max) {
     console.log("player attack")
     let elem = document.querySelector("#barM");
     let width = elem.style.width;
-    width = width.substring(0, width.length - 1) ;
-          width -=  attRandom(min, max);
-          if(width <= 0) {
-              width = 0
-          }
-            elem.style.width = width + "%";
-            elem.innerHTML = width  + "%";
+    width = width.substring(0, width.length - 1);
+    width -= attRandom(min, max);
+    if (width <= 0) {
+        width = 0
+    }
+    elem.style.width = width + "%";
+    elem.innerHTML = width + "%";
 
-            return width
-            
-      
-        }
+    return width
+
+
+}
 function attMonster(min, max) {
-        console.log("monster attack")
-        let elem = document.querySelector("#barY");
-        let widthM = elem.style.width;
-        
-        widthM = widthM.substring(0, widthM.length - 1) ;
-        widthM -=  attRandom(min, max);
-              if(widthM <= 0) {
-                widthM = 0
-            }
-            elem.style.width = widthM + "%";
-            elem.innerHTML = widthM  + "%";
+    console.log("monster attack")
+    let elem = document.querySelector("#barY");
+    let widthM = elem.style.width;
 
-            return widthM
-        
-        }
+    widthM = widthM.substring(0, widthM.length - 1);
+    widthM -= attRandom(min, max);
+    if (widthM <= 0) {
+        widthM = 0
+    }
+    elem.style.width = widthM + "%";
+    elem.innerHTML = widthM + "%";
+
+    return widthM
+
+}
+function newElemLogD() {
+    let newLiD = document.createElement("li");
+    newLiD.setAttribute("class", "nlog");
+    let logLiD = document.createTextNode("LET GO!");
+    listLog.appendChild(newLiD);
+    newLiD.appendChild(logLiD);
+}
+function newElemLogA() {
+    let newLiA = document.createElement("li");
+    newLiA.setAttribute("class", "nlog");
+    let logLiA = document.createTextNode("GIVE UP!");
+    listLog.appendChild(newLiA);
+    newLiA.appendChild(logLiA);
+
+}
+function newElemLogS() {
+
+    let newLiY = document.createElement("li");
+    newLiY.setAttribute("class", "nlog");
+    let newLiM = document.createElement("li");
+    newLiM.setAttribute("class", "nlog");
+
+    let logLiY = document.createTextNode("MONSTER! " + "ATTACK; " + "YOU PV DROPS TO " + barY.textContent);
+    let logLiM = document.createTextNode("YOU! " + "SPECIAL ATTACK: " + "MONSTER PV DROPS TO " + barM.textContent);
+    listLog.appendChild(newLiM);
+    listLog.appendChild(newLiY);
+    newLiM.appendChild(logLiM);
+    newLiY.appendChild(logLiY);
+    if (barY.textContent == "0%") {
+        newLiY.innerHTML = "GAME OVER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiY.innerHTML = "WINNER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiM.innerHTML = "GAME OVER!"
+    }
+    if (barY.textContent == "0%") {
+        newLiM.innerHTML = "WINNER!"
+    }
+
+}
+function newElemLogN() {
+
+    let newLiY = document.createElement("li");
+    newLiY.setAttribute("class", "nlog");
+    let newLiM = document.createElement("li");
+    newLiM.setAttribute("class", "nlog");
 
 
+    let logLiY = document.createTextNode("MONSTER! " + "ATTACK; " + "YOU PV DROPS TO " + barY.textContent);
+    let logLiM = document.createTextNode("YOU! " + "ATTACK: " + "MONSTER PV DROPS TO " + barM.textContent);
+    listLog.appendChild(newLiM);
+    listLog.appendChild(newLiY);
+    newLiM.appendChild(logLiM);
+    newLiY.appendChild(logLiY);
+    if (barY.textContent == "0%") {
+        newLiY.innerHTML = "YOU IS GAME OVER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiY.innerHTML = "YOU IS WINNER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiM.innerHTML = "MONSTER IS GAME OVER!"
+    }
+    if (barY.textContent == "0%") {
+        newLiM.innerHTML = " MONSTER IS WINNER!"
+    }
+
+}
+function newElemLogSoin() {
+
+    let logLiM = document.createTextNode("YOU! " + "CARE: " + "THE PV PV OF YOU TO " + barY.textContent);
+    let newLiM = document.createElement("li");
+    newLiM.setAttribute("class", "nlog");
+    listLog.appendChild(newLiM);
+    newLiM.appendChild(logLiM);
+
+}
+function newElemLogM() {
+
+    let newLiY = document.createElement("li");
+    newLiY.setAttribute("class", "nlog");
+    let logLiY = document.createTextNode("MONSTER! " + "ATTACK; " + "YOU PV DROPS TO " + barY.textContent);
+    newLiY.appendChild(logLiY);
+    listLog.appendChild(newLiY);
+
+    if (barY.textContent == "0%") {
+        newLiY.innerHTML = "GAME OVER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiY.innerHTML = "WINNER!"
+    }
+    if (barM.textContent == "0%") {
+        newLiM.innerHTML = "GAME OVER!"
+    }
+    if (barY.textContent == "0%") {
+        newLiM.innerHTML = "WINNER!"
+    }
+
+}
 
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
@@ -588,21 +705,21 @@ sectionCarousel.onclick = function () {
     document.querySelector(".ke").style.display = "none"
     document.querySelector(".mo").style.display = "none"
     sectCar.style.display = "flex";
-}    
+}
 sectionList.onclick = function () {
     let sectLi = document.querySelector(".li");
     document.querySelector(".car").style.display = "none";
     document.querySelector(".ke").style.display = "none";
     document.querySelector(".mo").style.display = "none";
     sectLi.style.display = "block";
-}    
+}
 sectionKeep.onclick = function () {
     let sectKeep = document.querySelector(".ke");
     document.querySelector(".car").style.display = "none";
     document.querySelector(".li").style.display = "none";
     document.querySelector(".mo").style.display = "none";
     sectKeep.style.display = "block";
-}    
+}
 sectionMonster.onclick = function () {
     let sectMonster = document.querySelector(".mo");
     document.querySelector(".car").style.display = "none";

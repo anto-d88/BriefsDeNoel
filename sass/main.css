@@ -290,7 +290,8 @@ main {
 .mo {
   display: none;
   width: 60vh;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   border: 2px solid black;
   background-color: aliceblue;
 }
@@ -357,6 +358,33 @@ main {
 #soin {
   margin: 1vh;
   background-color: #5ded99;
+}
+
+.log {
+  margin: 0;
+  padding: 0;
+}
+
+.log li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.log li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.log li:hover {
+  background: #ddd;
 }
 
 /*# sourceMappingURL=main.css.map */
