@@ -1,5 +1,5 @@
 //HEADER************************************************************
-{
+
 const naveBar = {
 
     bouton01: "Carousel",
@@ -38,9 +38,8 @@ function generatHeader() {
 }
 generatHeader();
 
-}
-//FOOTER***********************************************************
-{
+
+//FOOTER***********************************************************{
 const info = {
     liste01: "<li class='info'>Infos contact:</li><li>Robles Soler</li><li>Antonio</li><li>Simplon haut de france</li>",
     liste02: "<li>07.82.76.03.31</li><li>59200</li><li>Tourcoing</li><li>antonio_robles_88@outlook.com</li>",
@@ -59,9 +58,14 @@ function generatFooter() {
 }
 generatFooter();
 
-}
+
+//             CCC  AA  RRRR   OOO  U   U  SSS  EEEE L   
+//            C    A  A R   R O   O U   U S     E    L   
+//            C    AAAA RRRR  O   O U   U  SSS  EEE  L   
+//            C    A  A R R   O   O U   U     S E    L   
+//             CCC A  A R  RR  OOO   UUU  SSSS  EEEE LLLL
 //CAROUSEL***************************************************************
-{
+
 const imageCarousel = {
 
     image01: '<img class="active" src="img/image01.jpg" alt="street_fighter"><img src="img/image02.png" alt="street_fighter"><img src="img/image03.jpg" alt="street_fighter">',
@@ -134,10 +138,15 @@ function slidePrecedente() {
 
 precedent.addEventListener('click', slidePrecedente);
 
-}
+
+//               TTTTTT  OOO   OOO  DDD   OOO 
+//                 TT   O   O O   O D  D O   O
+//                 TT   O   O O   O D  D O   O
+//                 TT   O   O O   O D  D O   O
+//                 TT    OOO   OOO  DDD   OOO 
 //LISTE DE COURSE***************************************************
 
-{
+
 function generatLsteDeCours() {
     let listeDeCourse = document.createElement("section");
     listeDeCourse.setAttribute("class", "li");
@@ -213,9 +222,14 @@ function newElemList() {
     }, false);
 
 }
-}
+
+//              K  K EEEE EEEE PPPP  EEEE RRRR 
+//              K K  E    E    P   P E    R   R
+//              KK   EEE  EEE  PPPP  EEE  RRRR 
+//              K K  E    E    P     E    R R  
+//              K  K EEEE EEEE P     EEEE R  RR
 //KEEPER**********************************************************
-{
+
 function generatKeeper(){
     
 let keeper = document.createElement("section");
@@ -356,11 +370,14 @@ function printWin() {
         winner.classList.add("green");
     }
 }
-}
+                
+//MONSTER*****************************************************************************************
+//                  M   M  OOO  N   N  SSS  TTTTTT EEEE RRRR 
+//                  MM MM O   O NN  N S       TT   E    R   R
+//                  M M M O   O N N N  SSS    TT   EEE  RRRR 
+//                  M   M O   O N  NN     S   TT   E    R R  
+//                  M   M  OOO  N   N SSSS    TT   EEEE R  RR
 
-//MONSTER************************************************************
-
-{
 let monster = document.createElement("section");
 monster.setAttribute("class", "mo");
 let sectTitle = document.createElement("section");
@@ -426,6 +443,9 @@ Dem.addEventListener("click", function(){
     document.querySelector(".butJeu").style.display = "flex";
     demarrage();
     
+    document.querySelector("#attSpec").disabled = false;  
+    document.querySelector("#attNorm").disabled = false;  
+    document.querySelector("#soin").disabled = false;  
 })
 
 aban.addEventListener("click", function(){
@@ -434,23 +454,42 @@ aban.addEventListener("click", function(){
 })
 
 attNorm.addEventListener("click", function () {
-    if(attYou(5, 10) <= 0 || attMonster() <= 0){
-        return console.log("p1")
-    }
+   if(attMonster(-1, -1) <= 0 || attYou(5, 10) <= 0  ){
+       
+       document.querySelector("#attSpec").disabled = true;  
+       document.querySelector("#attNorm").disabled = true;  
+       document.querySelector("#soin").disabled = true;  
+   };
+   if(attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0  ){
+       
+       document.querySelector("#attSpec").disabled = true;  
+       document.querySelector("#attNorm").disabled = true;  
+       document.querySelector("#soin").disabled = true;  
+    };
     
 })
+
 attSpec.addEventListener("click", function () {
     
-    if(attYou(10, 20) <= 0 || attMonster() <= 0){
-
-        return console.log("p2");
-    }
     
+    if(attMonster(-1, -1) <= 0 || attYou(10, 20) <= 0){
+        
+        
+        document.querySelector("#attSpec").disabled = true;  
+        document.querySelector("#attNorm").disabled = true;  
+        document.querySelector("#soin").disabled = true;  
+    }
+    if(attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0){
+        
+        document.querySelector("#attSpec").disabled = true;  
+        document.querySelector("#attNorm").disabled = true;  
+        document.querySelector("#soin").disabled = true;  
+        
+    }
 })
 soin.addEventListener("click", function () {
-    
-    soinsY();
-    attMonster();
+    soinsY(5, 10);
+    attMonster(5, 10);
 })
 
 function attRandom(min, max) {
@@ -479,78 +518,65 @@ function demarrage() {
     }
   }
 }
-function soinsY() {
+function soinsY(min, max) {
     let elem = document.querySelector("#barY");
     let width = elem.style.width;
-    console.log(width);
-    width = Number(width.substring(0, width.length - 1));
+    width = width.substring(0, width.length - 1);
     
-    console.log(width);
-          width +=  10;
-          console.log(width);
+          width -=  -attRandom(min, max);
+          console.log("width");
           if(width > 100) {
               width = 100
           }
+          if(width <= 0) {
+            width = 0
+        }
+
             elem.style.width = width + "%";
             
             elem.innerHTML = width  + "%";
 
-}
-function attYou(min, max) {
+            return width
+            
+        }
+        function attYou(min, max) {
     console.log("player attack")
     let elem = document.querySelector("#barM");
     let width = elem.style.width;
     width = width.substring(0, width.length - 1) ;
           width -=  attRandom(min, max);
-          if(width < 0) {
+          if(width <= 0) {
               width = 0
           }
             elem.style.width = width + "%";
-            
             elem.innerHTML = width  + "%";
 
-            return width;
+            return width
+            
       
-    }
-function attMonster() {
+        }
+function attMonster(min, max) {
         console.log("monster attack")
         let elem = document.querySelector("#barY");
-        let width = elem.style.width;
-
-        width = width.substring(0, width.length - 1) ;
-              width -=  attRandom(5, 10);
-              if(width < 0) {
-                width = 0
+        let widthM = elem.style.width;
+        
+        widthM = widthM.substring(0, widthM.length - 1) ;
+        widthM -=  attRandom(min, max);
+              if(widthM <= 0) {
+                widthM = 0
             }
-            elem.style.width = width + "%";
-            elem.innerHTML = width  + "%";
+            elem.style.width = widthM + "%";
+            elem.innerHTML = widthM  + "%";
 
-              return width;          
+            return widthM
+        
         }
 
-// function attMonster() {
-//     let i = 0;
-//   if (i == 0) {
-//     i = 1;
-//     let elem = document.querySelector("#barY");
-//     let width = 100 ;
-//     let id = setInterval(frame, 1);
-//     function frame() {
-//       if (width <= 99) {
-//         clearInterval(id);
-//         i = 0;
-//       } else {
-//         width -= attRandom(3, 10);
-//         elem.style.width = width + "%";
-//         elem.innerHTML = width  + "%";
-//       }
-//     }
-//   }
-// }
-}
+
+
 // APPEL DES DIFFERENTE SECTIONS*******************************************************
 
-{
+
 const sectionCarousel = document.querySelector(".sectcar");
 const sectionList = document.querySelector(".list");
 const sectionKeep = document.querySelector(".keep");
@@ -584,4 +610,4 @@ sectionMonster.onclick = function () {
     document.querySelector(".ke").style.display = "none";
     sectMonster.style.display = "block";
 }
-}
+
