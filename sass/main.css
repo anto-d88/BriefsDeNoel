@@ -365,7 +365,7 @@ main {
   padding: 0;
 }
 
-.log li {
+.log .mlog {
   cursor: pointer;
   position: relative;
   font-size: 14px;
@@ -377,16 +377,26 @@ main {
   -ms-user-select: none;
   user-select: none;
 }
+.log .nlog {
+  font-size: 14px;
+  color: chartreuse;
+}
+.log .alog {
+  font-size: 14px;
+  color: white;
+}
+.log .dlog {
+  font-size: 14px;
+  color: white;
+}
 
 .modal {
   width: 100%;
-  text-align: center;
 }
 
 .log {
-  height: 10vh;
+  height: 16vh;
   overflow-y: auto;
-  border: 2px solid black;
   overflow-block: auto;
 }
 

@@ -593,14 +593,14 @@ function attMonster(min, max) {
 }
 function newElemLogD() {
     let newLiD = document.createElement("li");
-    newLiD.setAttribute("class", "nlog");
+    newLiD.setAttribute("class", "dlog");
     let logLiD = document.createTextNode("LET GO!");
     listLog.appendChild(newLiD);
     newLiD.appendChild(logLiD);
 }
 function newElemLogA() {
     let newLiA = document.createElement("li");
-    newLiA.setAttribute("class", "nlog");
+    newLiA.setAttribute("class", "alog");
     let logLiA = document.createTextNode("GIVE UP!");
     listLog.appendChild(newLiA);
     newLiA.appendChild(logLiA);
@@ -609,7 +609,7 @@ function newElemLogA() {
 function newElemLogS() {
 
     let newLiY = document.createElement("li");
-    newLiY.setAttribute("class", "nlog");
+    newLiY.setAttribute("class", "mlog");
     let newLiM = document.createElement("li");
     newLiM.setAttribute("class", "nlog");
 
@@ -636,7 +636,7 @@ function newElemLogS() {
 function newElemLogN() {
 
     let newLiY = document.createElement("li");
-    newLiY.setAttribute("class", "nlog");
+    newLiY.setAttribute("class", "mlog");
     let newLiM = document.createElement("li");
     newLiM.setAttribute("class", "nlog");
 
@@ -673,7 +673,7 @@ function newElemLogSoin() {
 function newElemLogM() {
 
     let newLiY = document.createElement("li");
-    newLiY.setAttribute("class", "nlog");
+    newLiY.setAttribute("class", "mlog");
     let logLiY = document.createTextNode("MONSTER! " + "ATTACK; " + "YOU PV DROPS TO " + barY.textContent);
     newLiY.appendChild(logLiY);
     listLog.appendChild(newLiY);

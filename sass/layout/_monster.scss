@@ -74,7 +74,7 @@
     padding: 0;
 }
 
-.log li {
+.log {.mlog {
     cursor: pointer;
     position: relative;
     // padding: 12px 8px 12px 40px;
@@ -89,25 +89,28 @@
     -ms-user-select: none;
     user-select: none;
 }
-
-.log li:nth-child(odd) {
-    // background: #f9f9f9;
+.nlog{
+    font-size: 14px;
+    color: chartreuse;
+}
+.alog{
+    font-size: 14px;
+    color: white;
+}
+.dlog{
+    font-size: 14px;
+    color: white;
+}
 }
 
-.log li:hover {
-    // background: #ddd;
-}
+
 .modal{
-    
-    // position: absolute;
-    // border: 2px solid black;
     width: 100%;
-    text-align: center;
 }
 .log{
-    height: 10vh;
+    height: 16vh;
     overflow-y: auto;
-    border: 2px solid black;
+    // border: 2px solid black;
     overflow-block: auto;
 }
 .boxPerso{
