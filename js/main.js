@@ -380,12 +380,6 @@ function printWin() {
 
 let monster = document.createElement("section");
 monster.setAttribute("class", "mo");
-let sectTitle = document.createElement("section");
-sectTitle.setAttribute("class", "sectTitle");
-let you = document.createElement("h2");
-you.innerHTML = "You!";
-let monstre = document.createElement("h2");
-monstre.innerHTML = "Monster!"
 let barreVie = document.createElement("section");
 barreVie.setAttribute("class", "sctbar")
 let vieY = document.createElement("section");
@@ -398,6 +392,12 @@ vieM.setAttribute("id", "vieM")
 let barM = document.createElement("article");
 barM.setAttribute("id", "barM");
 barM.innerHTML = "100%";
+let perso = document.createElement("section");
+perso.setAttribute("class", "boxPerso");
+let player1 = document.createElement("article");
+player1.setAttribute("class", "pla1");
+let player2 = document.createElement("article");
+player2.setAttribute("class", "pla2");
 let sectBut = document.createElement("section");
 sectBut.setAttribute("class", "sctBut");
 let Dem = document.createElement("button");
@@ -418,22 +418,22 @@ let aban = document.createElement("button");
 aban.setAttribute("id", "aban");
 aban.innerHTML = "GIVE UP";
 let boxLog = document.createElement("section");
-let titleLog = document.createElement("h3");
-titleLog.innerHTML = "ACTION"
+boxLog.setAttribute("class", "modal")
 let boxLi = document.createElement("section");
+boxLi.setAttribute("class", "modalitem")
 let listLog = document.createElement("ul");
 listLog.setAttribute("id", "listLog");
 listLog.setAttribute("class", "log");
 
 document.body.children[1].appendChild(monster);
-monster.appendChild(sectTitle);
-sectTitle.appendChild(you);
-sectTitle.appendChild(monstre);
 monster.appendChild(barreVie);
 barreVie.appendChild(vieY);
 barreVie.appendChild(vieM);
 vieY.appendChild(barY);
 vieM.appendChild(barM);
+monster.appendChild(perso);
+perso.appendChild(player1);
+perso.appendChild(player2);
 monster.appendChild(sectBut);
 sectBut.appendChild(Dem);
 sectBut.appendChild(butJeu);
@@ -442,7 +442,6 @@ butJeu.appendChild(attSpec);
 butJeu.appendChild(soin);
 butJeu.appendChild(aban);
 monster.appendChild(boxLog);
-boxLog.appendChild(titleLog);
 boxLog.appendChild(boxLi);
 boxLi.appendChild(listLog);
 
@@ -464,6 +463,9 @@ aban.addEventListener("click", function () {
     document.querySelector(".butJeu").style.display = "none";
     document.querySelector("#dem").style.display = "flex";
     newElemLogA();
+
+ 
+   
 })
 
 attNorm.addEventListener("click", function () {
@@ -618,16 +620,16 @@ function newElemLogS() {
     newLiM.appendChild(logLiM);
     newLiY.appendChild(logLiY);
     if (barY.textContent == "0%") {
-        newLiY.innerHTML = "GAME OVER!"
+        newLiY.innerHTML = "YOU IS GAME OVER!"
     }
     if (barM.textContent == "0%") {
-        newLiY.innerHTML = "WINNER!"
+        newLiY.innerHTML = "YOU ISWINNER!"
     }
     if (barM.textContent == "0%") {
-        newLiM.innerHTML = "GAME OVER!"
+        newLiM.innerHTML = " MONSTER IS GAME OVER!"
     }
     if (barY.textContent == "0%") {
-        newLiM.innerHTML = "WINNER!"
+        newLiM.innerHTML = "MONSTER IS WINNER!"
     }
 
 }
@@ -675,19 +677,6 @@ function newElemLogM() {
     let logLiY = document.createTextNode("MONSTER! " + "ATTACK; " + "YOU PV DROPS TO " + barY.textContent);
     newLiY.appendChild(logLiY);
     listLog.appendChild(newLiY);
-
-    if (barY.textContent == "0%") {
-        newLiY.innerHTML = "GAME OVER!"
-    }
-    if (barM.textContent == "0%") {
-        newLiY.innerHTML = "WINNER!"
-    }
-    if (barM.textContent == "0%") {
-        newLiM.innerHTML = "GAME OVER!"
-    }
-    if (barY.textContent == "0%") {
-        newLiM.innerHTML = "WINNER!"
-    }
 
 }
 
