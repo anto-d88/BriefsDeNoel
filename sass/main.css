@@ -292,7 +292,7 @@ main {
   width: 50%;
   height: 60vh;
   border: 2px solid black;
-  background-image: url(../../img/decor.gif);
+  background-image: url(../img/decor.gif);
   background-size: cover;
 }
 
