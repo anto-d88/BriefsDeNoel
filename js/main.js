@@ -597,6 +597,7 @@ function newElemLogD() {
     let logLiD = document.createTextNode("LET GO!");
     listLog.appendChild(newLiD);
     newLiD.appendChild(logLiD);
+    document.getElementById('listLog').scrollTop = 1000;
 }
 function newElemLogA() {
     let newLiA = document.createElement("li");
@@ -604,7 +605,7 @@ function newElemLogA() {
     let logLiA = document.createTextNode("GIVE UP!");
     listLog.appendChild(newLiA);
     newLiA.appendChild(logLiA);
-
+    document.getElementById('listLog').scrollTop = 1000;
 }
 function newElemLogS() {
 
@@ -631,7 +632,7 @@ function newElemLogS() {
     if (barY.textContent == "0%") {
         newLiM.innerHTML = "MONSTER IS WINNER!"
     }
-
+    document.getElementById('listLog').scrollTop = 1000;
 }
 function newElemLogN() {
 
@@ -659,7 +660,7 @@ function newElemLogN() {
     if (barY.textContent == "0%") {
         newLiM.innerHTML = " MONSTER IS WINNER!"
     }
-
+    document.getElementById('listLog').scrollTop = 1000;
 }
 function newElemLogSoin() {
 
@@ -668,6 +669,7 @@ function newElemLogSoin() {
     newLiM.setAttribute("class", "nlog");
     listLog.appendChild(newLiM);
     newLiM.appendChild(logLiM);
+    document.getElementById('listLog').scrollTop = 1000;
 
 }
 function newElemLogM() {
