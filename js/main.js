@@ -1,32 +1,25 @@
 //HEADER************************************************************
 
-const naveBar = {
 
-    bouton01: "Carousel",
-    bouton02: "Liste",
-    bouton03: "Keeper",
-    bouton04: "Monster",
-
-}
 
 
 function generatHeader() {
 
     let boutonCarousel = document.createElement("button");
     boutonCarousel.setAttribute("class", "sectcar")
-    boutonCarousel.innerHTML = naveBar.bouton01
+    boutonCarousel.innerHTML = "Carousel";
 
     let boutonList = document.createElement("button");
     boutonList.setAttribute("class", "list")
-    boutonList.innerHTML = naveBar.bouton02
+    boutonList.innerHTML = "Liste";
 
     let boutonKeeper = document.createElement("button");
     boutonKeeper.setAttribute("class", "keep");
-    boutonKeeper.innerHTML = naveBar.bouton03
+    boutonKeeper.innerHTML = "Keeper";
 
     let boutonMonster = document.createElement("button");
     boutonMonster.setAttribute("class", "monst");
-    boutonMonster.innerHTML = naveBar.bouton04
+    boutonMonster.innerHTML = "Monster";
 
 
 
@@ -446,7 +439,7 @@ boxLog.appendChild(boxLi);
 boxLi.appendChild(listLog);
 
 
-//FONCTION MONSTER***********((((((??????EN COUR??????)))))*******************************************
+//FONCTION MONSTER******************************************************
 
 Dem.addEventListener("click", function () {
     document.querySelector("#dem").style.display = "none";
@@ -475,7 +468,7 @@ attNorm.addEventListener("click", function () {
         document.querySelector("#attNorm").disabled = true;
         document.querySelector("#soin").disabled = true;
     };
-    if (attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0) {
+    if (attYou(-1, -1) <= 0 || attMonster(5, 15) <= 0) {
 
         document.querySelector("#attSpec").disabled = true;
         document.querySelector("#attNorm").disabled = true;
@@ -495,7 +488,7 @@ attSpec.addEventListener("click", function () {
         document.querySelector("#attNorm").disabled = true;
         document.querySelector("#soin").disabled = true;
     }
-    if (attYou(-1, -1) <= 0 || attMonster(5, 10) <= 0) {
+    if (attYou(-1, -1) <= 0 || attMonster(5, 15) <= 0) {
 
         document.querySelector("#attSpec").disabled = true;
         document.querySelector("#attNorm").disabled = true;
@@ -503,12 +496,11 @@ attSpec.addEventListener("click", function () {
 
     }
     newElemLogS();
-    return value
 })
 soin.addEventListener("click", function () {
     soinsY(5, 10);
     newElemLogSoin();
-    attMonster(5, 10);
+    attMonster(5, 15);
     newElemLogM();
 })
 
@@ -597,7 +589,7 @@ function newElemLogD() {
     let logLiD = document.createTextNode("LET GO!");
     listLog.appendChild(newLiD);
     newLiD.appendChild(logLiD);
-    document.getElementById('listLog').scrollTop = 1000;
+    document.getElementById('listLog').scrollTop = 10000;
 }
 function newElemLogA() {
     let newLiA = document.createElement("li");
@@ -605,7 +597,7 @@ function newElemLogA() {
     let logLiA = document.createTextNode("GIVE UP!");
     listLog.appendChild(newLiA);
     newLiA.appendChild(logLiA);
-    document.getElementById('listLog').scrollTop = 1000;
+    document.getElementById('listLog').scrollTop = 10000;
 }
 function newElemLogS() {
 
@@ -622,17 +614,18 @@ function newElemLogS() {
     newLiY.appendChild(logLiY);
     if (barY.textContent == "0%") {
         newLiY.innerHTML = "YOU IS GAME OVER!"
+        newLiM.innerHTML = " MONSTER IS WINNER!"
     }
     if (barM.textContent == "0%") {
-        newLiY.innerHTML = "YOU ISWINNER!"
-    }
-    if (barM.textContent == "0%") {
+        newLiY.innerHTML = "YOU I SWINNER!"
         newLiM.innerHTML = " MONSTER IS GAME OVER!"
+        newLiM.classList.remove("nlog");
+        newLiM.classList.add("mlog");
+        newLiY.classList.remove("mlog");
+        newLiY.classList.add("nlog");
     }
-    if (barY.textContent == "0%") {
-        newLiM.innerHTML = "MONSTER IS WINNER!"
-    }
-    document.getElementById('listLog').scrollTop = 1000;
+
+    document.getElementById('listLog').scrollTop = 10000;
 }
 function newElemLogN() {
 
@@ -650,17 +643,19 @@ function newElemLogN() {
     newLiY.appendChild(logLiY);
     if (barY.textContent == "0%") {
         newLiY.innerHTML = "YOU IS GAME OVER!"
+        newLiM.innerHTML = " MONSTER IS WINNER!"
     }
     if (barM.textContent == "0%") {
         newLiY.innerHTML = "YOU IS WINNER!"
-    }
-    if (barM.textContent == "0%") {
         newLiM.innerHTML = "MONSTER IS GAME OVER!"
+        newLiM.classList.remove("nlog");
+        newLiM.classList.add("mlog");
+        newLiY.classList.remove("mlog");
+        newLiY.classList.add("nlog");
     }
-    if (barY.textContent == "0%") {
-        newLiM.innerHTML = " MONSTER IS WINNER!"
-    }
-    document.getElementById('listLog').scrollTop = 1000;
+   
+
+    document.getElementById('listLog').scrollTop = 10000;
 }
 function newElemLogSoin() {
 
@@ -669,7 +664,8 @@ function newElemLogSoin() {
     newLiM.setAttribute("class", "nlog");
     listLog.appendChild(newLiM);
     newLiM.appendChild(logLiM);
-    document.getElementById('listLog').scrollTop = 1000;
+
+    document.getElementById('listLog').scrollTop = 10000;
 
 }
 function newElemLogM() {
