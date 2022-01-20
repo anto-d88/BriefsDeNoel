@@ -203,7 +203,7 @@ function newElemList() {
     for (let j = 0; j < close.length; j++) {
         close[j].onclick = function () {
             let parents = this.parentElement;
-            parents.style.display = "none";
+            parents.remove();
         }
     }
     //SYMBOLE V POUR ELEMENT COCHER**************
@@ -445,12 +445,22 @@ Dem.addEventListener("click", function () {
     document.querySelector("#dem").style.display = "none";
     document.querySelector(".butJeu").style.display = "flex";
     demarrage();
-    newElemLogD();
+    
+    delet();
 
     document.querySelector("#attSpec").disabled = false;
     document.querySelector("#attNorm").disabled = false;
     document.querySelector("#soin").disabled = false;
 })
+function delet(){
+    console.log(listLog.children)
+    const deletli= document.getElementById("listLog");
+    while (deletli.firstChild) {
+      deletli.removeChild(deletli.lastChild);
+    }newElemLogD();
+  }
+
+
 
 aban.addEventListener("click", function () {
     document.querySelector(".butJeu").style.display = "none";
@@ -584,6 +594,7 @@ function attMonster(min, max) {
 
 }
 function newElemLogD() {
+
     let newLiD = document.createElement("li");
     newLiD.setAttribute("class", "dlog");
     let logLiD = document.createTextNode("LET GO!");
